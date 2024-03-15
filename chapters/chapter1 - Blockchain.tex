@@ -1,0 +1,110 @@
+\section{Definition}
+
+Blockchain is an innovative technology introduced by \textbf{Satoshi Nakamoto} in 2008 through his famous paper \href{https://bitcoin.org/bitcoin.pdf}{"Bitcoin: A Peer-to-Peer Electronic Cash System"} \cite{bitcoinSatoshi}. It is a revolutionary cryptography-based electronic payment system designed to overcome the limitations of traditional systems and promote decentralization.
+
+\begin{remark}
+Defined as "\textit{a Blockchain}," each block contains a cryptographic hash of the previous block, a timestamp and transaction data. This blockchain structure makes each block inextricably linked to the others, creating an immutable and transparent digital ledger.
+\end{remark}
+
+Blockchain's basic purpose is to act as a decentralized ledger, which means that transactions are recorded permanently and immutably without the need for a central authority. It also enables consensus to be maintained in a trust-free environment, allowing unknown and potentially untrusted participants to collaborate securely.
+
+Trade Ledger is not that far back in the history of accounting evolution. Interestingly, the double-entry accounting system described in Luca Pacioli's book has origins dating back to the possible influence of the Muslim accounting practice implemented by the Venetians \cite{accountingBooks}. So yes, ledgers are not new at all!
+
+Now that we understand the essence of blockchain technology and its historical roots, let us delve into the concepts of \textbf{Distributed Ledgers} and \textbf{Decentralized Ledgers}. Understanding these concepts is critical as they form the backbone of various blockchain implementations.
+
+\section{Decentralized Ledgers}
+A decentralized ledger is essentially a registry that is managed and updated by multiple parties without the need for a central authority. Imagine this ledger as a document shared among several participants, but instead of being controlled by a single entity, it is distributed over a peer-to-peer (P2P) network. In this network, each node has a copy of the ledger and can verify its transactions.
+
+\textbf{\textcolor{Orange}{Strengths}}:
+\begin{itemize}
+\item \textbf{Enhanced Security}: Because there is no central point of control, decentralized ledgers are less vulnerable to cyber attacks.
+\item \textbf{Transparency and Accountability}: All parties involved can see and verify transactions, promoting transparency and accountability.
+\item \textbf{Trustless Environments}: No need to rely on intermediaries to verify transactions, creating a trustless environment.
+\end{itemize}
+
+\vspace{2cm}
+
+\textbf{\textcolor{Orange}{Drawbacks}}:
+\begin{itemize}
+\item \textbf{Processing Speed}: Due to the consensus required by multiple parties, transactions can be slower than in centralized systems.
+\item \textbf{Complexity of Implementation}: Multi-party coordination and agreement are required to effectively implement a decentralized ledger.
+\item \textbf{High Costs}: Maintaining the network requires significant resources in terms of computing power and energy.
+\end{itemize}
+
+\section{Distributed Ledgers}
+
+A distributed ledger is a ledger that is managed and updated by multiple parties and stored in multiple locations. Unlike a decentralized ledger, which is distributed over a peer-to-peer network, a distributed ledger operates over a distributed network, where each node in the network owns a copy of the ledger and can validate transactions.
+
+\textbf{\textcolor{Orange}{Strengths}}:
+
+\begin{itemize}
+    \item \textbf{Enhanced Processing Speed}: Distributed ledgers can be faster than decentralized ledgers because they can process transactions in parallel.
+    \item \textbf{Improved Scalability}: Being more scalable than decentralized ledgers, distributed ledgers can be expanded to accommodate more users and transactions.
+    \item \textbf{Increased Flexibility}: Distributed ledgers can be more flexible than decentralized ledgers because they can be customized to meet specific needs.
+\end{itemize}
+
+\textbf{\textcolor{Orange}{Drawbacks}}:
+
+\begin{itemize}
+    \item \textbf{Potentially Lower Security}: Unlike decentralized ledgers, distributed ledgers may be less secure because there is a central control point that could be targeted by hackers.
+    \item \textbf{Reduced Transparency and Accountability}: Some parts of the network may have more control over the ledger than others, reducing overall transparency and accountability.
+    \item \textbf{Complexity and Management}: Distributed ledgers can be more complex and difficult to manage than decentralized ledgers because they require coordination and agreement among multiple parties and multiple copies of the ledger.
+\end{itemize}
+
+
+\section{The Role of Trust and the Evolution of the Blockchain}
+
+Trust plays a central role in understanding blockchain, going beyond mere technology and raising crucial philosophical and political questions concerning governance and the distribution of power.
+
+Throughout history, philosophers and political theorists have examined different forms of social organization and the role of trust in institutions. From Plato to Hayek, perspectives vary widely, influencing our conceptions of power and trust.
+
+The 2008 financial crisis acted as a catalyst for the adoption and development of blockchain and Bitcoin. The collapse of banks and financial institutions profoundly undermined trust in central institutions, pushing for greater decentralization and financial autonomy.
+
+Moreover, blockchain does not simply represent a new technological invention, but rather an amalgamation of existing technologies that have been developed and refined over time. It is through the evolution of these technologies that blockchain has taken shape and begun to play a significant role in the digital landscape. To better understand this process, let us examine a rough timeline of key inventions:
+
+\newcommand{\ImageWidth}{7cm}
+\begin{center}
+\begin{tikzpicture}[scale=2]
+% draw horizontal line   
+\draw[thick, -Triangle] (0,0) -- (\ImageWidth,0) node[font=\scriptsize,below left=3pt and -8pt]{years};
+
+% draw vertical lines
+\foreach \x in {0,1,...,6}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+\foreach \x/\descr in {0/1960,1/1970,2/1980,3/1990,4/2000,5/2010,6/2020}
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (\x,-.3) {$\descr$};
+
+% colored bar 
+\foreach \x/\perccol in
+{0.7/0,0.9/0}
+\draw[lightgray!\perccol!Orange, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+\foreach \x/\perccol in
+{1.9/0,2.5/0}
+\draw[lightgray!\perccol!Blue, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+\foreach \x/\perccol in
+{3.5/0, 3.8/0}
+\draw[lightgray!\perccol!Orange, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+\foreach \x/\perccol in
+{4.8/0, 5.4/0}
+\draw[lightgray!\perccol!Blue, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+% braces
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}] (0.7,0.2)  -- +(1.2,0) 
+       node [black,midway,above=4pt, font=\scriptsize, align=center] {Birth of ARPANET, the network \\ that gave rise to the Internet. In \\ parallel, cryptography begins to \\ develop in the 1970s, culminating \\ with the invention of Merkle trees \\ in 1979.};
+\draw [thick,decorate,decoration={brace,amplitude=5pt}] (3.5,-.5) -- +(-1.6,0)
+       node [black,midway,font=\scriptsize, below=4pt, align=center] {The development of the TCP/IP protocol \\ in the 1980s provides the foundation for \\ Internet communication. In 1983, \\ tamper-proofing document timestamps with \\ Merkle trees are introduced. In 1992, \\ proof-of-work begins to be used to combat spam.};
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}] (3.5,0.2)  -- +(1.3,0) 
+       node [black,midway, above=4pt, font=\scriptsize, align=center] {In the 1990s, technologies such \\ as Digicash in 1995 and Bitgold in \\ 1998 emerge, experimenting with \\ cryptocurrency-like concepts. In 2000, \\ Gnutella brings decentralization \\to peer-to-peer networks. In 2001, \\ BitTorrent introduces distributed hash \\ tables. In 2002, Hashcash further \\ develops proof-of-work concepts. \\ In 2004, B-Money is proposed.};
+\draw [thick,decorate,decoration={brace,amplitude=5pt}] (6.4,-.5) -- +(-1.6,0)
+       node [black,midway,font=\scriptsize, below=4pt, align=center] {In 2009 Bitcoin and the \\ blockchain are born.};
+\end{tikzpicture}
+\end{center}

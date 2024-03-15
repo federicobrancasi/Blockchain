@@ -1,0 +1,69 @@
+% This work is licensed under the GNU aGPL v3 by apehex
+% https://github.com/apehex/
+
+\documentclass[11pt,fleqn,oneside]{book} % Default font size and left-justified equations
+
+\usepackage{biblatex}
+\addbibresource{articles.bib}
+
+% =======================================================================================
+% Global settings
+\newcommand{\AUTHOR}{Federico Brancasi}
+\newcommand{\CLIENT}{Client Name}
+\newcommand{\DATE}{\today}
+\newcommand{\VERSION}{0.2.1}
+\newcommand{\TITLE}{Blockchain}
+\newcommand{\SUBTITLE}{University of Trento}
+\newcommand{\SUBJECT}{UniTn}
+\newcommand{\URL}{https://github.com/apehex}
+
+\input{template/book/main} % Commands and style of the template
+
+% =======================================================================================
+\togglethemelight
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\hypersetup{citecolor=Orange}
+\usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
+% =======================================================================================
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+% =======================================================================================
+%                                   PREAMBLE
+% =======================================================================================
+\coverpage{\TITLE}{\SUBTITLE}{\AUTHOR}{\DATE}{\SUBJECT}
+%----------------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+
+% =======================================================================================
+%                                   CHAPTERS
+% =======================================================================================
+\newpage
+\chapter{What is a Blockchain?}
+\input{chapters/chapter1 - Blockchain}
+
+\newpage
+\chapter{Blockchain Core Concepts}
+\input{chapters/chapter2 - Core Concepts}
+
+\newpage
+\chapter{Consensus Mechanisms}
+\input{chapters/chapter3 - Consensus Mechanisms}
+
+% \newpage
+% \chapter{Lorem} \label{ch:lorem}
+% \input{chapters/chapterX - Template}
+
+\newpage
+\newpage
+\listoffigures
+\listoftables
+%----------------------------------------------------------------------------------------
+\newpage
+\printbibliography[title = {Bibliography}]
+
+\end{document}
