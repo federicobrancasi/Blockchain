@@ -1,0 +1,38 @@
+\documentclass[tikz,border=0.5cm]{standalone}
+\usepackage[edges]{forest}
+\usetikzlibrary{shadows.blur}
+
+\definecolor{Orange}{HTML}{fa7303}
+\definecolor{Blue}{HTML}{0e0441}
+
+\begin{document}
+\begin{forest}
+forked edges,
+for tree={
+    draw,
+    align=center,
+    fill=white, 
+    text=Blue,
+    edge={Blue, ultra thick},
+    font=\sffamily\bfseries,
+    blur shadow,
+    rounded corners, 
+    draw={Orange!90, ultra thick}
+}
+[Distributed Ledger \\ Technology
+ [Blockchain
+   [Private]
+   [Public]
+   [Consortium]
+   [Application \\ Specific]
+   [Sidechains
+    [1-way \\ pegged]
+    [2-way \\ pegged]
+   ]
+ ]
+ [Distributed Ledgers
+  [Specific Purpose]
+ ]
+]
+\end{forest}
+\end{document}

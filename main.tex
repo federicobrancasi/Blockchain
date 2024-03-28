@@ -1,14 +1,14 @@
-% This work is licensed under the GNU aGPL v3 by apehex
-% https://github.com/apehex/
-
 \documentclass[11pt,fleqn,oneside]{book} % Default font size and left-justified equations
 
 \usepackage{fontawesome5}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{graphicx}
 \usepackage{biblatex}
 \addbibresource{articles.bib}
 
+\usepackage[autostyle=false, style=english]{csquotes}
+\MakeOuterQuote{"}
 % =======================================================================================
 % Global settings
 \newcommand{\AUTHOR}{Federico Brancasi}
@@ -25,12 +25,20 @@
 % =======================================================================================
 \togglethemelight
 
-\usepackage{lipsum}
+\newcommand*{\img}[1]{%
+    \raisebox{-.3\baselineskip}{%
+        \includegraphics[
+        height=\baselineskip,
+        width=\baselineskip,
+        keepaspectratio,
+        ]{#1}%
+    }%
+}
 
 \begin{document}
 
 \hypersetup{citecolor=Orange}
-\usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
+
 % =======================================================================================
 %\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 
@@ -57,9 +65,9 @@
 \chapter{Consensus Mechanisms}
 \input{chapters/chapter3 - Consensus Mechanisms}
 
-% \newpage
-% \chapter{Lorem} \label{ch:lorem}
-% \input{chapters/chapterX - Template}
+\newpage
+\chapter{Smart Contracts}
+\input{chapters/chapter4 - Smart Contracts}
 
 \newpage 
 \ % The empty page

@@ -1,0 +1,75 @@
+\documentclass[tikz,border=0.1cm]{standalone}
+\usepackage{amsmath}
+\usetikzlibrary{decorations.pathreplacing,positioning, arrows.meta}
+\definecolor{Orange}{HTML}{fa7303}
+\definecolor{Blue}{HTML}{0e0441}
+
+\begin{document}
+\newcommand{\ImageWidth}{8cm}
+
+\begin{tikzpicture}[scale=2]
+% draw horizontal line   
+\draw[thick, -Triangle] (0,0) -- (\ImageWidth,0) node[font=\scriptsize,below left=3pt and -8pt]{years};
+
+% draw vertical lines
+\foreach \x in {0,1,...,7}
+\draw (\x cm,3pt) -- (\x cm,-3pt);
+
+\foreach \x/\descr in {0/1800\ \text{B.C.},1/1700\ \text{B.C.},2/1100,3/1700,4/1960,5/1980,6/2000,7/2020}
+\node[font=\scriptsize, text height=1.75ex,
+text depth=.5ex] at (\x,-.3) {$\descr$};
+
+% colored bar 
+\foreach \x/\perccol in
+{0/0,0/0}
+\draw[lightgray!\perccol!Orange, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+\foreach \x/\perccol in
+{1/0,1/0}
+\draw[lightgray, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+\foreach \x/\perccol in
+{2/0,2/0}
+\draw[lightgray!\perccol!Blue, line width=4pt] 
+(\x,.0) -- +(1,0);
+
+\foreach \x/\perccol in
+{3/0,3/0}
+\draw[lightgray, line width=4pt] 
+(\x,.0) -- +(1.5,0);
+
+\foreach \x/\perccol in
+{4.5/0, 5/0}
+\draw[lightgray!\perccol!Orange, line width=4pt] 
+(\x,.0) -- +(1.5,0);
+
+\foreach \x/\perccol in
+{6.5/0, 6.5/0}
+\draw[lightgray!\perccol!Blue, line width=4pt] 
+(\x,.0) -- +(0.9,0);
+
+% braces
+\draw [thick,decorate,decoration={brace,amplitude=5pt}] (1,-.5) -- +(-1,0)
+       node [black,midway,font=\scriptsize, below=4pt, align=center] {Legal codes like the \\Code of Hammurabi \\(1754 BC) establish \\early forms of \\ contracts.};
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}] (1,0.2)  -- +(1,0) 
+       node [black,midway,above=4pt, font=\scriptsize, align=center] {};
+\draw [thick,decorate,decoration={brace,amplitude=5pt}] (3,-.5) -- +(-1,0)
+       node [black,midway,font=\scriptsize, below=4pt, align=center] {Double-entry bookkeeping \\ (1494) enhances contract\\  record-keeping. Bill of\\  exchange (12th century) \\ and marine insurance \\ (14th-17th century) introduce \\ trade-related contracts.};
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}] (3,0.2)  -- +(1.5,0) 
+       node [black,midway,above=4pt, font=\scriptsize, align=center] {};
+\draw [thick,decorate,decoration={brace,amplitude=5pt}] (6.5,-.5) -- +(-2,0)
+       node [black,midway,font=\scriptsize, below=4pt, align=center] {Digital signature and Electronic \\ Data Interchange (EDI) (1970s) \\revolutionize  electronic contracts. \\Smart card technology  (1980s) \\improves security. E-contracts \\and cryptography (1990s) \\enhance online contract \\ formation. ESIGN Act (2000) \\provides legal  recognition \\to electronic signatures.};
+\draw [thick ,decorate,decoration={brace,amplitude=5pt}] (6.5,0.2)  -- +(0.9,0) 
+       node [black,midway, above=4pt, font=\scriptsize, align=center] {Ethereum (2015) pioneers \\smart contracts on a \\decentralized blockchain \\platform. Decentralized \\Autonomous Organizations  \\(DAO) and Decentralized \\Finance (DeFi) (2019) \\expand the scope of smart \\contracts.};
+
+\node[inner sep=0pt] at (3.85,0.5)
+{\includegraphics[width=.35\textwidth]{tikz/chapter4 - 400 Years Later.png}};
+
+\node[inner sep=0pt] at (1.5,0.5)
+{\includegraphics[width=.25\textwidth]{tikz/chapter4 - 3000 Years Later.png}};
+
+\end{tikzpicture}
+
+\end{document}
