@@ -1,0 +1,67 @@
+\section{Transaction Types}
+
+Transactions in the blockchain can be classified into three main types:
+
+\begin{remark2}
+\textbf{Contract Creation}:
+Contract creation occurs when a new smart contract is generated on the blockchain. Smart contracts are self-executing programmes that exist on the blockchain and contain code that can manage funds, perform calculations and even interact with other contracts. When a new contract is created, it is registered on the blockchain along with its code and initial parameters.
+\end{remark2}
+
+\begin{remark}
+\textbf{Calls}:
+Calls occur when executing functions or interacting with existing smart contracts on the blockchain. These interactions can include performing operations defined in the contract code, such as transferring funds, modifying data or triggering events. Calls can be made by human users or other smart contracts and are essential for the execution of actions and updating the state of the blockchain.
+\end{remark}
+
+\begin{remark2}
+\textbf{Value Transfer}:
+Value transfer represents the movement of cryptocurrencies or tokens from one address to another on the blockchain. This type of transaction simply involves changing balances in users' wallets. For example, when cryptocurrencies are sent from one wallet to another, a value transfer transaction is generated on the blockchain. These transactions allow users to exchange digital assets and are the foundation of financial activities within the blockchain.
+\end{remark2}
+
+\section{Accounts in the Blockchain Context}
+
+In Ethereum, there are two main categories of accounts:
+
+\begin{itemize}
+    \item \textbf{\textcolor{Orange}{EOAs (Externally Owned Accounts)}}: They represent user accounts on the blockchain. EOAs are managed via private keys and allow users to send transactions and interact directly with the Ethereum network.
+    \item \textbf{\textcolor{Orange}{CA (Contract Accounts)}}: These accounts are created during the creation of smart contracts on the blockchain. They too are identified by an address and are used to execute specific code via transactions.
+\end{itemize}
+
+Obviously, the state system evolves through transactions, meaning that \textbf{state is constantly being created or updated as a result of the interaction between accounts and the execution of transactions}. The state transition process in Ethereum consists of the following steps:
+
+\begin{enumerate}
+    \item \textbf{\textcolor{Blue}{Validation}} of the transaction.
+    \item Calculation of the \textbf{\textcolor{Blue}{transaction fee and signature}} by the sender. Update of the account nonce.
+    \item Provision of sufficient ether (ETH) to cover the \textbf{\textcolor{Blue}{cost of the GAS}} required to execute the transaction. The GAS represents the \textbf{remuneration for the miner} and is \textbf{calculated according to the complexity of the transaction}.
+    \item If the transaction fails due to lack of funds to cover the GAS or for other reasons, it is cancelled, but the sender is \textbf{\textcolor{Blue}{still required to pay the validators fees}}.
+    \item Finally, the sender receives a \textbf{\textcolor{Blue}{notification with the change}} (if any) \textbf{\textcolor{Blue}{and the commission}}, while the miners get paid for their work. The blockchain then proceeds to a new state.
+\end{enumerate}
+
+After discussing this process, it is important to understand two key concepts that play a fundamental role in managing the state of the Ethereum blockchain: \textbf{\textcolor{Orange}{Account State}} and \textbf{\textcolor{Orange}{Storage Trie}}. The former represents the \textbf{current status of all accounts on the blockchain}, including balances, nonce and other attributes, while the latter is a \textbf{data structure used to store information within smart contracts}, organising it in a tree structure for efficient access.
+
+
+
+\section{Wallet}
+
+A wallet represents a digital infrastructure dedicated to the management and storage of cryptocurrencies. It acts as a \textbf{database to store private keys} (along with all transactions).
+
+Wallets are \textbf{hierarchical and deterministic}: they use a master password, the seed, from which the private keys are uniquely derived. The seed must be written down, saved and protected, since with it anyone can reconstruct the entire wallet and thus gain control over it.
+
+There are two main types of wallets used in the context of cryptocurrencies:
+
+\textbf{\textcolor{Hot}{Hot Wallet \faHotjar}} 
+
+This is a wallet implementation that keeps \textbf{private keys accessible via software on network-connected devices}. Although it offers immediate and convenient access to funds, it can be vulnerable to cyber attacks. An example of hot wallet is \textbf{MetaMask}.
+    
+\textbf{\textcolor{Snow}{Cold Wallet \faSnowflake}} 
+
+In contrast to the hot approach, the cold wallet operates offline and stores \textbf{private keys in dedicated hardware devices}. While offering a higher level of security, it requires more effort to access the funds. An example of cold wallet is \textbf{Ledger}.
+
+Access and control of funds within a wallet are governed by two key components:
+
+\begin{itemize}
+    \item \textbf{Private Key}: This is a cryptographically secure sequence of characters that serves as a means of authorising transactions and asset transfers. The safekeeping of the private key is of paramount importance in ensuring the security of digital assets.
+    
+    \item \textbf{Address}: Represents a unique code used to identify the account within the blockchain network. Addresses enable the receipt of funds and are generated from the public key associated with the private key.
+\end{itemize}
+
+\textit{But how are DApps able to communicate with identity and wallet? All thanks to Web3.} \textbf{Web3 is the standard library} for facilitating the communication of DApps on the Ethereum blockchain. This library provides a number of functions that simplify the interaction between the environment in which DApps operate (such as browsers, DApps themselves, MetaMask) and the blockchain.
